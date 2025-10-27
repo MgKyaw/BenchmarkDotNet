@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 
+[MemoryDiagnoser]
 public class MyBenchmarkDemo
 {
     [GlobalSetup]
