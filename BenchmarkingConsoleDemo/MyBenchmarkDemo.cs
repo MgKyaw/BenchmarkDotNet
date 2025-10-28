@@ -1,12 +1,24 @@
 ﻿using BenchmarkDotNet.Attributes;
+using Microsoft.AspNetCore.Mvc.Testing;
 
 [MemoryDiagnoser]
 public class MyBenchmarkDemo
 {
+    private static HttpClient _httpClient;
+
     [GlobalSetup]
     public void GlobalSetup()
     {
-        //Write your initialization code here
+        var factory = new WebApplicationFactory<Startup>()
+        .WithWebHostBuilder(configuration =>
+        {
+            configuration.ConfigureLogging(logging =>
+            {
+                logging.ClearProviders();
+            });
+        });
+
+        _httpClient = factory.CreateClient();
     }
 
     [Benchmark]
