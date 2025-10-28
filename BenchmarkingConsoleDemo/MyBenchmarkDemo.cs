@@ -1,22 +1,31 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿//[MemoryDiagnoser]
+//public class MyBenchmarkDemo
+//{
+//    private static HttpClient _httpClient;
 
-[MemoryDiagnoser]
-public class MyBenchmarkDemo
-{
-    [GlobalSetup]
-    public void GlobalSetup()
-    {
-        //Write your initialization code here
-    }
+//    [GlobalSetup]
+//    public void GlobalSetup()
+//    {
+//        //var factory = new WebApplicationFactory<Startup>()
+//        //.WithWebHostBuilder(configuration =>
+//        //{
+//        //    configuration.ConfigureLogging(logging =>
+//        //    {
+//        //        logging.ClearProviders();
+//        //    });
+//        //});
 
-    [Benchmark]
-    public void MyFirstBenchmarkMethod()
-    {
-        //Write your code here   
-    }
-    [Benchmark]
-    public void MySecondBenchmarkMethod()
-    {
-        //Write your code here
-    }
-}
+//        //_httpClient = factory.CreateClient();
+//    }
+
+//    [Benchmark]
+//    public void MyFirstBenchmarkMethod()
+//    {
+//        //Write your code here   
+//    }
+//    [Benchmark]
+//    public void MySecondBenchmarkMethod()
+//    {
+//        //Write your code here
+//    }
+//}
