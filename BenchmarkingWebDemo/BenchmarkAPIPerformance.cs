@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Testing;
+﻿using BenchmarkDotNet.Attributes;
+using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace BenchmarkingWebDemo;
 
