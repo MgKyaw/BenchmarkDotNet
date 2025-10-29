@@ -1,3 +1,5 @@
+using BenchmarkingWebDemo;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -34,6 +36,17 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
+
+app.MapGet("/GetProducts", async (IProductRepository productRepository) =>
+{
+    return Results.Ok(await productRepository.GetAllProducts());
+});
+
+app.MapGet("/GetProductsOptimized", async (IProductRepository productRepository) =>
+{
+    return Results.Ok(await productRepository.GetAllProductsOptimized());
+});
+
 
 app.Run();
 
